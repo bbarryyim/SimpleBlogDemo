@@ -29,9 +29,9 @@ public class BlogModelTest {
     @Before
     public void setup(){
         post = new Post("title", "body","username");
-        comment = new Comment("body of comment", post);
+        comment = new Comment("body of comment", "username", post);
         secondPost = new Post("title2", "body2","username2");
-        secondComment = new Comment("2 body of comment", secondPost);
+        secondComment = new Comment("2 body of comment", "username", secondPost);
     }
 
     @Test

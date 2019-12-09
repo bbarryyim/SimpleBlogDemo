@@ -24,7 +24,14 @@
                       th:object="${comment}" method="post" class="form-horizontal"
                       role="form">
 
-                    <h3 class="text-center">Write a comment on blog post</h3>
+                    <h3 class="text-center">Write A Comment On Blog Post</h3>
+
+                    <div class="form-group">
+                        <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                               class="alert alert-danger"></label>
+                        <textarea th:field="*{username}" placeholder="Username"
+                                  class="form-control input-lg"/>
+                    </div>
 
                     <div class="form-group">
                         <label th:if="${#fields.hasErrors('body')}" th:errors="*{body}"

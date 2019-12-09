@@ -30,6 +30,8 @@
         <div class="date">
             <i>Posted on</i>
             <span th:text="${#dates.format(c.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
+            <i>Posted By</i>
+            <span th:text="${c.username}"></span>
         </div>
         <p class="content" th:utext="${c.body}">Post content</p>
     </article>

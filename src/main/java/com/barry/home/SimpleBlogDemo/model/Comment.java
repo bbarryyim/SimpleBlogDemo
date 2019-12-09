@@ -19,6 +19,9 @@ public class Comment {
     @NotEmpty(message = "*Please write something")
     private String body;
 
+    @Column(name = "username", columnDefinition = "TEXT")
+    private String username;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date", nullable = false, updatable = false)
     @CreationTimestamp
@@ -32,8 +35,9 @@ public class Comment {
 
     }
 
-    public Comment(String body, Post post){
+    public Comment(String body, String username, Post post){
         this.body = body;
+        this.username = username;
         this.post = post;
     }
 
@@ -51,6 +55,14 @@ public class Comment {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Date getCreateDate() {
