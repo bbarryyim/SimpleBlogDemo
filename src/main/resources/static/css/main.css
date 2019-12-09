@@ -9,3 +9,7 @@ h2 {
 h3 {
     color: #1c7020;
 }
+
+span.navigationSpace {
+    padding-left: 50px;
+}

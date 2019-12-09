@@ -18,7 +18,6 @@ public class Post {
     private Long id;
 
     @Column(name = "title", nullable = false)
-    @Length(min = 5, message = "*Your title must have at least 5 characters")
     @NotEmpty(message = "*Please provide title")
     private String title;
 
