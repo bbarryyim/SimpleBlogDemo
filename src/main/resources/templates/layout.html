@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th=“http://www.thymeleaf.org”>
+
+<head>
+    <div th:fragment="header-css">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css"/>
+        <title>Simple Blog Demo</title>
+    </div>
+</head>
+<body>
+    <header>
+        <div th:fragment="site-header">
+            <meta charset="utf-8" />
+            <a href="home.html" th:href="@{~/home}">Home</a>
+            <a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a>
+        </div>
+    </header>
+
+    <header>
+        <div th:fragment="site-header-post">
+            <meta charset="utf-8" />
+            <a href="home.html" th:href="@{~/home}">Home</a>
+            <a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a>
+            <a href="blogCommentForm.html" th:href="@{'/blogComment/{id}'(id=${post.id})}">Comment on blog post</a>
+        </div>
+    </header>
+
+    <h1>Welcome</h1>
+    <p>Welcome to the Spring MVC Blog.</p>
+    <footer th:fragment="site-footer">
+    &copy; Spring MVC Blog System, 2016
+    </footer>
+</body>
+</html>

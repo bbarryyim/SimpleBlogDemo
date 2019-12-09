@@ -1,17 +1,46 @@
 package com.barry.home.SimpleBlogDemo.model;
 
-import java.util.Collection;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
-
+@Entity
+@Table(name = "post")
 public class Post {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "post_id")
     private Long id;
+
+    @Column(name = "title", nullable = false)
+    @Length(min = 5, message = "*Your title must have at least 5 characters")
+    @NotEmpty(message = "*Please provide title")
     private String title;
+
+    @Column(name = "body", columnDefinition = "TEXT")
     private String body;
+
+    @Column(name = "username", columnDefinition = "TEXT")
+    private String username;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_date", nullable = false, updatable = false)
+    @CreationTimestamp
     private Date createDate;
-    private User user;
-    private Collection<Comment> comments;
+
+    public Post(){
+
+    }
+
+    public Post(String title, String body, String username){
+        this.title = title;
+        this.body = body;
+        this.username = username;
+    }
 
     public Long getId() {
         return id;
@@ -29,6 +58,14 @@ public class Post {
         this.title = title;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getBody() {
         return body;
     }
@@ -43,22 +80,6 @@ public class Post {
 
     public void setCreateDate(Date date) {
         this.createDate = date;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Collection<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Collection<Comment> comments) {
-        this.comments = comments;
     }
 
 }

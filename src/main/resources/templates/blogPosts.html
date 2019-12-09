@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="/layout :: header-css"/>
+</head>
+
+<body>
+
+<header>
+    <div th:replace="/layout :: site-header-post"/>
+</header>
+
+<h1>BLOG POST</h1>
+Now is: <b th:text="${execInfo.now.time}"></b>
+
+<main id="posts">
+    <article th:each="p : ${post}">
+        <h2 class="title" th:text="${p.title}">Post Title</h2>
+        <div class="date">
+            <i>Posted on</i>
+            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
+            <i>Posted By</i>
+            <span th:text="${p.username}"></span>
+        </div>
+        <p class="content" th:utext="${p.body}">Post content</p>
+    </article>
+</main>
+
+</body>
+
+</html>
+
