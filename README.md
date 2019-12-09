@@ -11,4 +11,4 @@ The blogging application allows user to write new posts. All blog posts are disp
 3) Run the dockerRun.sh script
 4) Direct yourself to the Home Page : localhost:8090/home
 
-![Image description](blob/master/img/screenshot_blog.png)
+![Image description](img/screenshot_blog.png)
