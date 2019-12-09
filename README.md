@@ -11,4 +11,9 @@ The blogging application allows user to write new posts. All blog posts are disp
 3) Run the dockerRun.sh script
 4) Direct yourself to the Home Page : localhost:8090/home
 
-![Image description](img/screenshot_blog)
+![Image description](img/screenshot_blog.png)
+
+<h3> View demo on AWS Instance </h3>
+
+http://ec2-3-135-204-149.us-east-2.compute.amazonaws.com:8080/home
+
