@@ -16,7 +16,7 @@ public class Comment {
     private Long id;
 
     @Column(name = "body", columnDefinition = "TEXT")
-    @NotEmpty(message = "*Please write something")
+    @NotEmpty(message = "**Please write something**")
     private String body;
 
     @Column(name = "username", columnDefinition = "TEXT")

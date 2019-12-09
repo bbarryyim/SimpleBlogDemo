@@ -1,7 +1,6 @@
 package com.barry.home.SimpleBlogDemo.model;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -18,7 +17,7 @@ public class Post {
     private Long id;
 
     @Column(name = "title", nullable = false)
-    @NotEmpty(message = "*Please provide title")
+    @NotEmpty(message = "**Please provide title**")
     private String title;
 
     @Column(name = "body", columnDefinition = "TEXT")
