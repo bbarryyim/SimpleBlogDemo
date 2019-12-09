@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -31,6 +32,9 @@ public class Post {
     @Column(name = "create_date", nullable = false, updatable = false)
     @CreationTimestamp
     private Date createDate;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
+    private Collection<Comment> comments;
 
     public Post(){
 
@@ -80,6 +84,14 @@ public class Post {
 
     public void setCreateDate(Date date) {
         this.createDate = date;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
     }
 
 }

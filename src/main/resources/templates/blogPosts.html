@@ -27,6 +27,18 @@ Now is: <b th:text="${execInfo.now.time}"></b>
     </article>
 </main>
 
+<h3>COMMENTS</h3>
+<aside id="comments">
+    <article th:each="c : ${post.comments}">
+        <div class="date">
+            <i>Posted on</i>
+            <span th:text="${#dates.format(c.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
+        </div>
+        <p class="content" th:utext="${c.body}">Post content</p>
+    </article>
+</aside>
+
+
 </body>
 
 </html>

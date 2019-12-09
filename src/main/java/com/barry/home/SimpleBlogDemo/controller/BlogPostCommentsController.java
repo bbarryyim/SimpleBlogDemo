@@ -31,8 +31,8 @@ public class BlogPostCommentsController {
     }
 
     @RequestMapping(value = "/createComment", method = RequestMethod.POST)
-    public String createNewComment(@Valid Comment comment) {
-
+    public String createNewComment(@Valid Comment comment, Model model) {
+        model.addAttribute("comment", comment);
         commentService.save(comment);
         return "redirect:/blog/" + comment.getPost().getId();
 
@@ -44,7 +44,6 @@ public class BlogPostCommentsController {
         Post post = postService.getOne(id);
         comment.setPost(post);
         model.addAttribute("comment", comment);
-        model.addAttribute("post", post);
         return "/blogCommentForm";
     }
 
