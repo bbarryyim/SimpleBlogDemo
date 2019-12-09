@@ -11,7 +11,7 @@ public class BlogErrorController implements ErrorController {
 
     @RequestMapping("/error")
     public ModelAndView error() {
-        return new ModelAndView("/error");
+        return new ModelAndView("error");
     }
 
     @Override
