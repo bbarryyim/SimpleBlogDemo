@@ -19,11 +19,11 @@ public class HomeController {
         this.postService = postService;
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("home")
     public String index(Model model) {
         List<Post> allPosts = postService.findAll();
         model.addAttribute("allPosts", allPosts);
-        return "/home";
+        return "home";
     }
 
 }

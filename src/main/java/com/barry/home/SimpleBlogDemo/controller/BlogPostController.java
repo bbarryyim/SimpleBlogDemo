@@ -26,20 +26,20 @@ public class BlogPostController {
         Post post = new Post();
         post.setCreateDate(new Date());
         model.addAttribute("post", post);
-        return "/blogPostForm";
+        return "blogPostForm";
     }
 
     @RequestMapping(value = "/createPost", method = RequestMethod.POST)
     public String createNewPost(@Valid Post post){
         postService.save(post);
-        return "redirect:/blog/"+post.getId();
+        return "redirect:blog/"+post.getId();
     }
 
     @RequestMapping(value = "/blog/{id}", method = RequestMethod.GET)
     public String showPost(@PathVariable("id") Long id, Model model){
         Post post = postService.getOne(id);
         model.addAttribute("post", post);
-        return "/blogPosts";
+        return "blogPosts";
 
     }
 
