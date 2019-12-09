@@ -9,7 +9,7 @@ The blogging application allows user to write new posts. All blog posts are disp
 1) Git Clone this repo
 2) Make sure your system has Java, Docker, and Maven installed
 3) Run the dockerRun.sh script
-4) Direct yourself to the Home Page : localhost:8090/home
+4) Direct yourself to the Home Page : localhost:8080/home
 
 ![Image description](img/screenshot_blog.png)
 
