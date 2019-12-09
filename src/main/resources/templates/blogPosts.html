@@ -11,15 +11,12 @@
     <div th:replace="/layout :: site-header-post"/>
 </header>
 
-<h1>BLOG POST</h1>
-Now is: <b th:text="${execInfo.now.time}"></b>
-
 <main id="posts">
     <article th:each="p : ${post}">
-        <h2 class="title" th:text="${p.title}">Post Title</h2>
+        <h1 class="title" th:text="${p.title}">Post Title</h1>
         <div class="date">
             <i>Posted on</i>
-            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
+            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span><br>
             <i>Posted By</i>
             <span th:text="${p.username}"></span>
         </div>

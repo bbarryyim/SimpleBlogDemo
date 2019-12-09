@@ -12,14 +12,16 @@
 </header>
 
 <h1>Simple Blog Demo</h1>
-Now is: <b th:text="${execInfo.now.time}"></b>
+Current Time: <b th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></b>
 
 <main id="posts">
     <article th:each="p : ${allPosts}">
-        <h2 class="title" th:text="${p.title}">Post Title</h2>
+        <a href="blogPosts.html"  th:href="@{'/blog/{id}'(id=${p.id})}">
+            <h2 class="title" th:text="${p.title}">Post Title</h2>
+        </a>
         <div class="date">
             <i>Posted on</i>
-            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
+            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span><br>
             <i>Posted By</i>
             <span th:text="${p.username}"></span>
         </div>

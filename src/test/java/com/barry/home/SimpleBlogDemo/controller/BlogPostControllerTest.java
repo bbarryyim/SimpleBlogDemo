@@ -30,12 +30,6 @@ public class BlogPostControllerTest {
         Assert.assertEquals(200, getPost().getStatusCodeValue());
     }
 
-    @Test
-    public void testPostPost(){
-        Post post = new Post("title", "body","username");
-        System.out.println(postPost(post));
-    }
-
     private ResponseEntity<String> getPost(){
         URI targetUrl = UriComponentsBuilder.newInstance()
                 .scheme("http")
@@ -45,17 +39,6 @@ public class BlogPostControllerTest {
                 .build()
                 .toUri();
         return restTemplate.getForEntity(targetUrl, String.class);
-    }
-
-    private String postPost(Post post) {
-        URI targetUrl = UriComponentsBuilder.newInstance()
-                .scheme("http")
-                .host("127.0.0.1")
-                .port(port)
-                .pathSegment("createPost", "")
-                .build()
-                .toUri();
-        return restTemplate.postForObject(targetUrl, post, String.class);
     }
 
 }
