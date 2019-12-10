@@ -14,6 +14,14 @@
 	<name>SimpleBlogDemo</name>
 	<description>Demo project for Spring Boot</description>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub bbarryyim Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/bbarryyim/SimpleBlogDemo</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<java.version>1.8</java.version>
 		<slf4jVersion>1.7.16</slf4jVersion>

@@ -13,32 +13,30 @@
 
 <main id="posts">
     <article th:each="p : ${post}">
-        <h1 class="title" th:text="${p.title}">Post Title</h1>
-        <div class="date">
-            <i>Posted on</i>
-            <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span><br>
-            <i>Posted By</i>
-            <span th:text="${p.username}"></span>
+        <h2 class="title" th:text="${p.title}">Post Title</h2>
+        <div>
+            <small>
+                <p class="text-muted">Posted on: <span th:text="${#dates.format(p.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span></p>
+                <p class="text-muted">Posted By: <span th:text="${p.username}"></span></p>
+            </small>
+            <p class="content" th:text="${p.body}">Post content</p>
         </div>
-        <p class="content" th:utext="${p.body}">Post content</p>
     </article>
 </main>
 
-<h5>Comments</h5>
-<aside id="comments">
+<h4><strong>Comments</strong></h4>
+<div>
     <article th:each="c : ${post.comments}">
-        <div class="date">
-            <i>Posted on</i>
-            <span th:text="${#dates.format(c.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span>
-            <i>Posted By</i>
-            <span th:text="${c.username}"></span>
+        <div class="well">
+            <p class="content" th:text="${c.body}">Post Content</p>
+            <small>
+                <p class="text-muted"><span th:text="${c.username}"></span></p>
+                <p class="text-muted"><span th:text="${#dates.format(c.createDate, 'dd-MM-yyyy HH:mm')}">No Date Set</span></p>
+            </small>
         </div>
-        <p class="content" th:utext="${c.body}">Post content</p>
     </article>
-</aside>
-
+</div>
 
 </body>
-
 </html>
 

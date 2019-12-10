@@ -4,9 +4,7 @@
 <head>
     <div th:fragment="header-css">
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css">
         <title>Simple Blog Demo</title>
     </div>
 </head>
@@ -14,28 +12,35 @@
     <header>
         <div th:fragment="site-header">
             <meta charset="utf-8" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            <a href="home.html" th:href="@{~/home}">Home</a>
-            &nbsp;
-            <a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a>
-            &nbsp;
+            <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="home.html" th:href="@{~/home}">Home</a></li>
+                            <li><a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
     <header>
         <div th:fragment="site-header-post">
             <meta charset="utf-8" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            <a href="home.html" th:href="@{~/home}">Home</a>
-            &nbsp;
-            <a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a>
-            &nbsp;
-            <a href="blogCommentForm.html" th:href="@{'/blogComment/{id}'(id=${post.id})}">Comment On Post</a>
-            &nbsp;
+            <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="home.html" th:href="@{~/home}">Home</a></li>
+                            <li><a href="blogPostForm.html" th:href="@{~/createPost}">Create New Post</a></li>
+                            <li><a href="blogCommentForm.html" th:href="@{'/blogComment/{id}'(id=${post.id})}">Comment On Post</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 </body>

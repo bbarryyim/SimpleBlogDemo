@@ -29,13 +29,12 @@ public class BlogPostController {
     }
 
     @RequestMapping(value = "/createPost", method = RequestMethod.POST)
-    public String createNewPost(@Valid Post post, BindingResult bindingResult, Model model){
+    public String createNewPost(@Valid Post post, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "blogPostForm";
         }
         else{
             postService.save(post);
-            model.addAttribute("successMessage", "Blog oost has been added!");
             return "redirect:blog/"+post.getId();
         }
     }
@@ -58,7 +57,7 @@ public class BlogPostController {
         Post post = postService.getOne(id);
         if(postService.findAll().contains(post)){
             postService.delete(post);
-            return "home";
+            return "redirect:home";
         }
         else{
             return "error";
