@@ -16,4 +16,4 @@ The blogging application allows user to write new posts. All blog posts are disp
 <h3> View demo on AWS Instance </h3>
 
 http://ec2-3-135-204-149.us-east-2.compute.amazonaws.com:8080/home
-
+(Disabled)
