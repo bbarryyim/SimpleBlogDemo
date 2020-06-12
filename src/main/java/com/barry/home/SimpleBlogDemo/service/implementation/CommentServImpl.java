@@ -22,6 +22,7 @@ public class CommentServImpl implements CommentService {
 
     @Override
     public Comment save(Comment comment){
+        logger.debug("DEBUG MESSAGE TEST!!");
         logger.info("Comment saved, and data flushed to DB.");
         return commentRepo.saveAndFlush(comment);
     }
